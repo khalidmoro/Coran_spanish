@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sagrado Corán</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKUSURBVFiF7ZdNaBNBFMd/s9kPE5OYYBqTxkKwFgRrRYrFQ7EeBBEUwYMfIHjwYEFE8OCp4F0vHgQP6kG8K3gQPFUQRaggxYNUD1JtsZUWWtI0zW7idnfHw26y2ZgmJtmNevB/WnZ25v1m3nvz3gxIJBKJRPL/Q8mFRBRFEQXKgXJN0xb/1QY0TUNRFEQgBHwHJhVFQRTFJW0EQRAEQUAQhCWviaIoqKqKqqoAKIpCOBxOvxbz9QBNTU0MDQ0tWF9XV0dfXx8AqqpSUVGRvZcLqqvrWPbuOGZwDGwLxWrDXL4a+8Z9iMc0kskk8Xh8QTy73c7U1BSxWIxoNEoymQRAVVXC4TCCICAIAoqiYLFYcDqdAFgsFhwOB2VlZdhsNhRFYXZ2lng8TjKZxDAMDMNAVVXsdjs2mw2r1YrVaiUUChEMBpmZmSGRSJBKpRb3QEtLC52dnfT09HD+/PmsxR0dHZw4cYKrV69y7do1AoFAxrjb7WZ4eJiWlhYuXrzI7du3M8Z3797N/fv3aWxs5NKlS3R3d2eM79u3j3v37rF27VouX77MrVu3Msb379/P3bt3WbNmDVeuXKGrqytjvLW1lTt37rBq1SquXr1KZ2cnAGbTNDFNE9M0SSQSpFIpkskkhmEwMzNDIpHA5/MRCoVQVZX6+nrq6+ux2+04HA7Ky8ux2WxYLBYsy5xUVFSEzWYjFAoRDAaZnp4mFosRj8cxDCPtTZvNRklJCU6nE4vFgsViYXJyEr/fTyQSIRqNkkqlFvdAPqmtrWXHjh2Mj48zPj7O5OQkPp+PmZkZIpEI0WgUXdfRNA1d10mn32q1UlxcjNPppLS0lJqaGmpqaqivr2fbtm1s3rwZt9tNUVHRkjYSiUQikUgk/xY/AX5H01P5dFN5AAAAAElFTkSuQmCC">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-flex">
+                <div class="header-left">
+                    <h1>El Sagrado Corán</h1>
+                </div>
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo del Corán" class="main-logo">
+                </div>
+                <div class="header-right">
+                    <h2>traducido al español</h2>
+                </div>
+            </div>
+        </header>
+
+        <div id="surah-list" class="surah-container">
+            <!-- Las Surahs se cargarán aquí dinámicamente -->
+        </div>
+
+        <div id="ayah-container" class="hidden">
+            <button id="back-button" class="back-button">← Volver a la lista de Surahs</button>
+            <div class="ayah-container">
+                <h2 id="surah-title" class="surah-title"></h2>
+                <div id="ayah-list">
+                    <!-- Los versículos se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                2025 El Sagrado Corán - Derechos reservados para todos los musulmanes
+                <a href="mailto:g5y@hotmail.com">Contacto</a>
+            </div>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+:root {
+    --primary-color: #1e4d4e;
+    --secondary-color: #439a97;
+    --accent-color: #62b6b7;
+    --background-color: #f6f6f6;
+    --text-color: #333;
+    --card-bg: rgba(255, 255, 255, 0.97);
+    --border-radius: 8px;
+    --spacing: 15px;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 15px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 5px 15px;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-left {
+    flex: 2;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+}
+
+.header-right {
+    flex: 2;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.header-left h1, .header-right h2 {
+    margin: 0;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+
+.header-right h2 {
+    font-size: 1em;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.main-logo {
+    width: 60px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.surah-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    padding: var(--spacing);
+    flex: 1;
+}
+
+.surah-card {
+    background-color: var(--card-bg);
+    background-image: url('../images/card-bg.png');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 110px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.surah-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(67, 154, 151, 0.1),
+        rgba(30, 77, 78, 0.2)
+    );
+    z-index: 1;
+}
+
+.surah-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+    z-index: 2;
+}
+
+.surah-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.surah-card h3 {
+    color: var(--primary-color);
+    font-size: 0.85em;
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.arabic-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.1em;
+    text-align: right;
+    margin: auto 0;
+    line-height: 1.3;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.ayah-container {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: var(--card-shadow);
+}
+
+.back-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    box-shadow: var(--card-shadow);
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.hidden {
+    display: none;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 6px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-size: 0.75em;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.footer-content {
+    text-align: center;
+    opacity: 0.9;
+    letter-spacing: -0.2px;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-content a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    :root {
+        --spacing: 10px;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .header-flex {
+        gap: 15px;
+    }
+
+    .header-left, .header-right {
+        padding: 0 10px;
+    }
+
+    .header-left h1, .header-right h2 {
+        font-size: 0.9em;
+    }
+
+    .main-logo {
+        width: 50px;
+    }
+
+    .surah-card {
+        min-height: 100px;
+    }
+
+    .back-button {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ayah-item {
+    background-color: var(--card-bg);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    border-left: 4px solid var(--accent-color);
+}
+
+.ayah-number {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: var(--card-shadow);
+}
+
+.translation {
+    color: var(--text-color);
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.audio-player {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 15px;
+    height: 30px;
+}
+
+.audio-player::-webkit-media-controls-panel {
+    background: linear-gradient(135deg, var(--background-color), #fff);
+}
+
+.error {
+    color: var(--error-color);
+    text-align: center;
+    padding: 15px;
+    background-color: #fde8e8;
+    border-radius: var(--border-radius);
+    margin: 15px 0;
+    box-shadow: var(--card-shadow);
+}
+
+.error-audio {
+    color: var(--error-color);
+    font-size: 0.8em;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #fde8e8;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
