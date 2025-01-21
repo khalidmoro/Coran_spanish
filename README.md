@@ -40,3 +40,4 @@ python app.py
 ## Licencia
 
 Este proyecto está destinado para uso educativo y religioso.
+Coded by WiFiway
